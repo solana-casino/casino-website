@@ -45,7 +45,7 @@ export default function Navbar() {
             className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-white"
             onClick={() => setModalType("about")}
           >
-            About us
+            About Us
           </p>
           <p
             className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-white"
@@ -57,7 +57,7 @@ export default function Navbar() {
             className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-white"
             onClick={() => setModalType("contract")}
           >
-            Contract address
+            Contract Address
           </p>
         </div>
         {/* Social Icons */}
@@ -223,7 +223,7 @@ export default function Navbar() {
 
             {/* Tokenomics Modal */}
             {modalType === "tokenomics" && (
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 z-50">
                 <div className="py-[12px] px-[30px] bg-[rgba(0,0,0,0.12)]">
                     <h2 className="text-[26px] text-white font-semibold">
                       Tokenomics
@@ -231,7 +231,7 @@ export default function Navbar() {
                 </div>
                 <div className="space-y-8 px-[30px] py-[20px]">
                   {/* First row of 3 columns */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-1 md:gap-6">
                     <div>
                       <div className="font-semibold">Total Supply</div>
                       <div>1,000,000,000</div>
