@@ -37,7 +37,7 @@ export default function Navbar() {
       <nav className="flex justify-between items-center py-4">
         {/* Logo */}
         <div>
-          <Image src="/images/logo.svg" height={100} width={109} alt="Logo" />
+          <Image src="/images/logo.png" height={100} width={109} alt="Logo" />
         </div>
         {/* Nav Items */}
         <div className="hidden md:flex justify-center items-center gap-10 opacity-100 rounded-[50px] bg-black/10 border border-[#6F6F6F] backdrop-blur-md px-[40px] py-[10px] text-[#DADADA] text-[18px]">
@@ -100,12 +100,12 @@ export default function Navbar() {
                 alt="close"
               />
             </div>
-            <div className="flex flex-col p-10 gap-4 justify-center items-center">
-              <p className="" onClick={()=> {
+            <div className="flex flex-col p-14 gap-4 justify-center items-center text-[#DADADA]">
+              <p className="text-[18px] font-semibold" onClick={()=> {
                 setModalOpen(false)
                 setModalType("about")
               }}>About Us</p>
-              <p onClick={()=> {
+              <p  className="text-[18px] font-semibold" onClick={()=> {
                 setModalOpen(false)
                 setModalType("tokenomics")
               }}>Tokenomics</p>
@@ -116,7 +116,7 @@ export default function Navbar() {
                   width={16.3}
                   alt="copy"
                 />
-                <p>Contract</p>
+                <p className="text-[18px] font-semibold">Contract Address</p>
               </div>
 
               <div className="mt-4 flex justify-center items-center gap-10">
@@ -180,12 +180,12 @@ export default function Navbar() {
             className={`
               relative flex flex-col w-full mx-4 
               bg-white/10 backdrop-blur-md border border-white/25
-              text-[#DADADA] rounded-none shadow-md z-10
+              text-[#DADADA] shadow-md z-10 rounded-[6px]
               ${modalMaxWidth}
             `}
           >
             {/* Close Button */}
-            <button
+            {/* <button
               className="
                 absolute top-4 right-4 w-8 h-8 flex items-center justify-center
                 rounded-full border border-white text-white hover:bg-white/20
@@ -195,7 +195,11 @@ export default function Navbar() {
               aria-label="Close modal"
             >
               &times;
-            </button>
+            </button> */}
+            <div className="absolute top-4 right-4 cursor-pointer" onClick={closeModal}
+              aria-label="Close modal">
+            <Image src="/images/close-modal.svg" height={20} width={20} alt="X" />
+            </div>
 
             {/* About Modal */}
             {modalType === "about" && (
