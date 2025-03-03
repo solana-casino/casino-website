@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -7,6 +6,7 @@ import { useState } from "react";
 export default function Navbar() {
   const [modalType, setModalType] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const closeModal = () => {
     setModalType(null);
@@ -28,7 +28,8 @@ export default function Navbar() {
   };
 
   // For tokenomics, use a wider modal
-  const modalMaxWidth = modalType === "tokenomics" ? "w-[1000px]" : "max-w-lg";
+  const modalMaxWidth =
+    modalType === "tokenomics" ? "max-w-[70%]" : "max-w-[574px]";
 
   return (
     <>
@@ -39,7 +40,7 @@ export default function Navbar() {
           <Image src="/images/logo.svg" height={100} width={109} alt="Logo" />
         </div>
         {/* Nav Items */}
-        <div className="flex justify-center items-center gap-10 opacity-100 rounded-[50px] bg-black/10 border border-[#6F6F6F] backdrop-blur-md px-[40px] py-[10px] text-[#DADADA] text-[18px]">
+        <div className="hidden md:flex justify-center items-center gap-10 opacity-100 rounded-[50px] bg-black/10 border border-[#6F6F6F] backdrop-blur-md px-[40px] py-[10px] text-[#DADADA] text-[18px]">
           <p
             className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-white"
             onClick={() => setModalType("about")}
@@ -60,12 +61,110 @@ export default function Navbar() {
           </p>
         </div>
         {/* Social Icons */}
-        <div className="flex justify-center items-center gap-10">
+        <div className="hidden md:flex justify-center items-center gap-10">
           <Image src="/images/x.svg" height={30} width={30} alt="X" />
-          <Image src="/images/telegram.svg" height={30} width={30} alt="Telegram" />
+          <Image
+            src="/images/telegram.svg"
+            height={30}
+            width={30}
+            alt="Telegram"
+          />
           <Image src="/images/icon.svg" height={30} width={30} alt="Icon" />
         </div>
+        <div className="md:hidden" onClick={() => setModalOpen(true)}>
+          <Image
+            src="/images/hamburger.svg"
+            height={21}
+            width={30}
+            alt="Icon"
+          />
+        </div>
       </nav>
+
+      {/* MODAL */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-100 flex  justify-center p-4">
+          <div className="absolute inset-0 bg-black"></div>
+
+          <div
+            className={`relative flex flex-col w-full bg-black text-white p-10 ${modalMaxWidth} `}
+          >
+            <div
+              className="absolute top-4 right-4 text-3xl"
+              onClick={() => setModalOpen(false)}
+            >
+              <Image
+                src="/images/close-icon.svg"
+                height={24}
+                width={24}
+                alt="close"
+              />
+            </div>
+            <div className="flex flex-col p-10 gap-4 justify-center items-center">
+              <p className="" onClick={()=> {
+                setModalOpen(false)
+                setModalType("about")
+              }}>About Us</p>
+              <p onClick={()=> {
+                setModalOpen(false)
+                setModalType("tokenomics")
+              }}>Tokenomics</p>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/images/copy.svg"
+                  height={16.72}
+                  width={16.3}
+                  alt="copy"
+                />
+                <p>Contract</p>
+              </div>
+
+              <div className="mt-4 flex justify-center items-center gap-10">
+                <Image src="/images/x.svg" height={30} width={30} alt="X" />
+                <Image
+                  src="/images/telegram.svg"
+                  height={30}
+                  width={30}
+                  alt="Telegram"
+                />
+                <Image
+                  src="/images/icon.svg"
+                  height={30}
+                  width={30}
+                  alt="Icon"
+                />
+              </div>
+
+              <div>
+                <button
+                  className="
+          px-[40px] py-[10px] fixed bottom-8 left-1/2 -translate-x-1/2 transform
+          z-50
+          w-[231px] h-[43px]
+          flex items-center justify-center
+          rounded-[50px]
+          border-2 border-white/40
+          bg-black/[0.2]           
+          shadow-inner            
+          text-white
+          font-extrabold
+          text-[20px]
+          whitespace-nowrap
+          text-base leading-none
+          transition-all
+          cursor-pointer
+
+          hover:bg-black/[0.4]     
+          hover:shadow-md          
+        "
+                >
+                  Purchase $CASINO
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* MODAL */}
       {modalType && (
@@ -79,7 +178,7 @@ export default function Navbar() {
           {/* Modal Container */}
           <div
             className={`
-              relative flex flex-col w-full mx-4 p-6
+              relative flex flex-col w-full mx-4 
               bg-white/10 backdrop-blur-md border border-white/25
               text-[#DADADA] rounded-none shadow-md z-10
               ${modalMaxWidth}
@@ -101,20 +200,29 @@ export default function Navbar() {
             {/* About Modal */}
             {modalType === "about" && (
               <div className="flex flex-col gap-4">
-                <h2 className="text-2xl text-white font-semibold">About Us</h2>
-                <p className="text-[18px]">
-                  Solana Casino: The memecoin that pays you SOL every 21 minutes—
-                  hold more, make more. Get a chance to win the jackpot each time
-                  the pool hits 7 SOL. No luck, just patience. Welcome to the only
-                  casino where the house always pays you.
-                </p>
+                <div className="py-[12px] px-[30px] bg-[rgba(0,0,0,0.12)]">
+                  <h2 className="text-2xl text-white font-semibold ">
+                    About Us
+                  </h2>
+                </div>
+                <div className="px-[30px] py-[20px] ">
+                  <p className="text-[18px]">
+                    Solana Casino: The memecoin that pays you SOL every 21
+                    minutes— hold more, make more. Get a chance to win the
+                    jackpot each time the pool hits 7 SOL. No luck, just
+                    patience. Welcome to the only casino where the house always
+                    pays you.
+                  </p>
+                </div>
               </div>
             )}
 
             {/* Tokenomics Modal */}
             {modalType === "tokenomics" && (
               <div className="flex flex-col gap-4">
-                <h2 className="text-2xl text-white font-semibold">Tokenomics</h2>
+                <h2 className="text-2xl text-white font-semibold">
+                  Tokenomics
+                </h2>
                 <div className="space-y-8">
                   {/* First row of 3 columns */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -138,8 +246,8 @@ export default function Navbar() {
                     <div>
                       <div className="font-semibold">Jackpot Pool (2.77%)</div>
                       <div>
-                        Every time the pool reaches 7 SOL, one lucky winner
-                        wins it all (higher holdings = better odds)
+                        Every time the pool reaches 7 SOL, one lucky winner wins
+                        it all (higher holdings = better odds)
                       </div>
                     </div>
                     <div>
@@ -147,8 +255,12 @@ export default function Navbar() {
                       <div>100%</div>
                     </div>
                     <div>
-                      <div className="font-semibold">Dev Holdings (Never Sold)</div>
-                      <div>5% allocated for team, marketing and ecosystem growth</div>
+                      <div className="font-semibold">
+                        Dev Holdings (Never Sold)
+                      </div>
+                      <div>
+                        5% allocated for team, marketing and ecosystem growth
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -173,7 +285,7 @@ export default function Navbar() {
                   {/* Copy text link (no border) */}
                   <button
                     onClick={handleCopy}
-                    className="text-[18px] cursor-pointer hover:underline focus:outline-none"
+                    className="text-[18px] cursor-pointer focus:outline-none"
                   >
                     {copied ? "Copied" : "Copy"}
                   </button>

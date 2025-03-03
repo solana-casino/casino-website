@@ -87,17 +87,26 @@
 "use client";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
+import { useIsMobile } from "@/hooks/useMobile";
 
 export default function Home() {
   // State to control whether the video is muted
   const [isMuted, setIsMuted] = useState(true);
 
+  // Detect if screen width is < 768px
+  const isMobile = useIsMobile(768);
+
+  // Choose video based on screen size
+  const videoSrc = isMobile
+    ? "/videos/mobile.mp4"
+    : "/videos/desktop.mp4";
+
   return (
-    <div className="relative w-full h-dvh text-white px-14 overflow-hidden">
+    <div className="relative w-full h-dvh text-white px-14 overflow-hidden ">
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover -z-10"
-        src="/videos/desktop.mp4"
+       src={videoSrc}
         autoPlay
         loop
         muted={isMuted}
@@ -129,7 +138,6 @@ export default function Home() {
 
       {/* Purchase $CASINO Button */}
       <button
-        // onClick={() => alert("Button clicked!")}
         className="
           px-[40px] py-[10px] fixed bottom-8 left-1/2 -translate-x-1/2 transform
           z-50
