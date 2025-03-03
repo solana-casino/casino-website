@@ -575,7 +575,7 @@ export default function Navbar() {
                     <div>
                       <div className="font-semibold">Jackpot Pool (2.77%)</div>
                       <div>
-                        Every time the pool reaches 7 SOL, one lucky winner
+                        Every time the pool accumulates 7 SOL, one lucky winner
                         wins it all (higher holdings = higher win %) *LPs
                         excluded
                       </div>
