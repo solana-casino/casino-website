@@ -102,7 +102,7 @@ export default function Home() {
     : "/videos/desktop.mp4";
 
   return (
-    <div className="relative w-full h-dvh text-white px-14 overflow-hidden ">
+    <div className="relative w-full h-dvh text-white px-6 md:px-14 overflow-hidden ">
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover -z-10"

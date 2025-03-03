@@ -29,12 +29,12 @@ export default function Navbar() {
 
   // For tokenomics, use a wider modal
   const modalMaxWidth =
-    modalType === "tokenomics" ? "max-w-[70%]" : "max-w-[574px]";
+    modalType === "tokenomics" ? "max-w-[80%]" : "max-w-[574px]";
 
   return (
     <>
       {/* NAVBAR */}
-      <nav className="flex justify-between items-center p-4">
+      <nav className="flex justify-between items-center py-4">
         {/* Logo */}
         <div>
           <Image src="/images/logo.svg" height={100} width={109} alt="Logo" />
@@ -109,7 +109,7 @@ export default function Navbar() {
                 setModalOpen(false)
                 setModalType("tokenomics")
               }}>Tokenomics</p>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 cursor-pointer" onClick={handleCopy}>
                 <Image
                   src="/images/copy.svg"
                   height={16.72}
@@ -201,7 +201,7 @@ export default function Navbar() {
             {modalType === "about" && (
               <div className="flex flex-col gap-4">
                 <div className="py-[12px] px-[30px] bg-[rgba(0,0,0,0.12)]">
-                  <h2 className="text-2xl text-white font-semibold ">
+                  <h2 className="text-[26px] text-white font-semibold ">
                     About Us
                   </h2>
                 </div>
@@ -220,10 +220,12 @@ export default function Navbar() {
             {/* Tokenomics Modal */}
             {modalType === "tokenomics" && (
               <div className="flex flex-col gap-4">
-                <h2 className="text-2xl text-white font-semibold">
-                  Tokenomics
-                </h2>
-                <div className="space-y-8">
+                <div className="py-[12px] px-[30px] bg-[rgba(0,0,0,0.12)]">
+                    <h2 className="text-[26px] text-white font-semibold">
+                      Tokenomics
+                    </h2>
+                </div>
+                <div className="space-y-8 px-[30px] py-[20px]">
                   {/* First row of 3 columns */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div>
@@ -238,7 +240,7 @@ export default function Navbar() {
                       <div className="font-semibold">
                         Holder Reward Distribution (5%)
                       </div>
-                      <div>SOL distributed every 21 minutes</div>
+                      <div>SOL distributed automatically every 21 minutes</div>
                     </div>
                   </div>
                   {/* Second row of 3 columns */}
@@ -247,19 +249,20 @@ export default function Navbar() {
                       <div className="font-semibold">Jackpot Pool (2.77%)</div>
                       <div>
                         Every time the pool reaches 7 SOL, one lucky winner wins
-                        it all (higher holdings = better odds)
+                        it all (higher holdings = higher win %)
                       </div>
                     </div>
                     <div>
                       <div className="font-semibold">Fair Launch</div>
-                      <div>100%</div>
+                      <div>No pre-sale or externally allocated tokens. 100% community 
+                      driven</div>
                     </div>
                     <div>
                       <div className="font-semibold">
-                        Dev Holdings (Never Sold)
+                        Developer Holdings (Never Sold)
                       </div>
                       <div>
-                        5% allocated for team, marketing and ecosystem growth
+                      5% – Allocated for marketing, project development, and ecosystem growth
                       </div>
                     </div>
                   </div>
@@ -270,25 +273,28 @@ export default function Navbar() {
             {/* Contract Modal */}
             {modalType === "contract" && (
               <div className="flex flex-col gap-4">
-                <h2 className="text-2xl text-white font-semibold">
-                  Contract Address
-                </h2>
+                <div  className="py-[12px] px-[30px] bg-[rgba(0,0,0,0.12)]">
+                    <h2 className="text-2xl text-white font-semibold">
+                      Contract Address
+                    </h2>
+                </div>
 
                 {/* Address + Copy Row */}
-                <div className="flex items-center justify-between gap-4 border border-white/40 rounded px-3 py-2">
-                  {/* Show the majority, blur last 6 chars */}
-                  <p className="text-[18px] whitespace-nowrap">
-                    {visiblePart}
-                    <span className="blur-sm">{blurredPart}</span>
-                  </p>
-
-                  {/* Copy text link (no border) */}
-                  <button
-                    onClick={handleCopy}
-                    className="text-[18px] cursor-pointer focus:outline-none"
-                  >
-                    {copied ? "Copied" : "Copy"}
-                  </button>
+                <div className="px-[30px] py-[20px]">
+                    <div className="flex items-center justify-between gap-4 border border-white/40 rounded px-3 py-2">
+                      {/* Show the majority, blur last 6 chars */}
+                      <p className="text-[18px] whitespace-nowrap">
+                        {visiblePart}
+                        <span className="blur-sm">{blurredPart}</span>
+                      </p>
+                      {/* Copy text link (no border) */}
+                      <button
+                        onClick={handleCopy}
+                        className="text-[18px] cursor-pointer focus:outline-none"
+                      >
+                        {copied ? "Copied" : "Copy"}
+                      </button>
+                    </div>
                 </div>
               </div>
             )}
@@ -298,3 +304,5 @@ export default function Navbar() {
     </>
   );
 }
+
+
