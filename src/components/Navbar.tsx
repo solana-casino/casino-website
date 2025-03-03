@@ -509,7 +509,7 @@ export default function Navbar() {
               bg-white/10 backdrop-blur-md border border-white/25
               text-[#DADADA] shadow-md z-10 rounded-[6px]
               ${modalMaxWidth}
-              max-h-[75vh] 
+              max-h-[65vh] 
               md:max-h-[80vh]
               overflow-y-auto
               pb-6
