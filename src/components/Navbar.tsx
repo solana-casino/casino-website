@@ -509,7 +509,7 @@ export default function Navbar() {
               bg-white/10 backdrop-blur-md border border-white/25
               text-[#DADADA] shadow-md z-10 rounded-[6px]
               ${modalMaxWidth}
-              max-h-[65vh] 
+              max-h-[55vh] 
               md:max-h-[80vh]
               overflow-y-auto
               pb-6
@@ -566,7 +566,8 @@ export default function Navbar() {
                       <div className="font-semibold">
                         Holder Reward Distribution (5%)
                       </div>
-                      <div>SOL distributed automatically every 21 minutes</div>
+                      <div>SOL distributed automatically every 21 minutes *LPs
+                      excluded</div>
                     </div>
                   </div>
                   {/* Second row of 3 columns */}
