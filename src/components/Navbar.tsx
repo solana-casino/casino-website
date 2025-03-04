@@ -82,14 +82,14 @@ export default function Navbar() {
 
       {/* MOBILE MENU MODAL */}
       {modalOpen && (
-        <div className="fixed inset-0 z-100 flex justify-center p-4">
+        <div className="fixed inset-0 z-100 flex justify-center py-4 ">
           <div className="absolute inset-0 bg-black"></div>
 
           <div
             className={`relative flex flex-col w-full bg-black text-white p-10 ${modalMaxWidth}`}
           >
             <div
-              className="absolute top-4 right-4 text-3xl"
+              className=" text-3xl flex justify-end "
               onClick={() => setModalOpen(false)}
             >
               <Image
