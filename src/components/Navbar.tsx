@@ -57,7 +57,7 @@ export default function Navbar() {
       <nav className="flex justify-between items-center py-4">
         {/* Logo */}
         <div>
-          <Image src="/images/logo.png" height={100} width={100} alt="Logo" />
+          <Image src="/images/logo.svg" height={100} width={100} alt="Logo" />
         </div>
         {/* Nav Items */}
         <div className="hidden md:flex justify-center items-center gap-10 opacity-100 rounded-[50px] bg-black/10 border border-[#6F6F6F] backdrop-blur-md px-[40px] py-[10px] text-[#DADADA] text-[18px]">
