@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -19,10 +20,10 @@ export default function Navbar() {
     checkMobile();
 
     // Add resize listener
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
     // Cleanup listener
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const closeModal = () => {
@@ -33,7 +34,10 @@ export default function Navbar() {
   // Example contract address
   const CONTRACT_ADDRESS = "SQtSMvYfXome11YgxFMD75hNbGQXW5QTin";
   // Show first 4 and last 4 characters
-  const displayAddress = `${CONTRACT_ADDRESS.slice(0, 4)}...${CONTRACT_ADDRESS.slice(-4)}`;
+  const displayAddress = `${CONTRACT_ADDRESS.slice(
+    0,
+    4
+  )}...${CONTRACT_ADDRESS.slice(-4)}`;
 
   // Copy function
   const handleCopy = (e: React.MouseEvent) => {
@@ -82,13 +86,25 @@ export default function Navbar() {
         </div>
         {/* Social Icons */}
         <div className="hidden md:flex justify-center items-center gap-10">
-          <Image src="/images/x.svg" height={30} width={30} alt="X" />
-          <Image
-            src="/images/telegram.svg"
-            height={30}
-            width={30}
-            alt="Telegram"
-          />
+          <Link
+            href="https://x.com/CasinoCoinSol"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src="/images/x.svg" height={30} width={30} alt="X" />
+          </Link>
+          <Link
+            href="https://t.me/SolCasinoTg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/telegram.svg"
+              height={30}
+              width={30}
+              alt="Telegram"
+            />
+          </Link>
           <Image src="/images/icon.svg" height={30} width={30} alt="Icon" />
         </div>
         <div className="md:hidden" onClick={() => setModalOpen(true)}>
@@ -155,13 +171,25 @@ export default function Navbar() {
               </div>
 
               <div className="mt-4 flex justify-center items-center gap-10">
-                <Image src="/images/x.svg" height={30} width={30} alt="X" />
-                <Image
-                  src="/images/telegram.svg"
-                  height={30}
-                  width={30}
-                  alt="Telegram"
-                />
+                <Link
+                  href="https://x.com/CasinoCoinSol"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image src="/images/x.svg" height={30} width={30} alt="X" />
+                </Link>
+                <Link
+                  href="https://t.me/SolCasinoTg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/telegram.svg"
+                    height={30}
+                    width={30}
+                    alt="Telegram"
+                  />
+                </Link>
                 <Image
                   src="/images/icon.svg"
                   height={30}
@@ -214,7 +242,13 @@ export default function Navbar() {
               relative flex flex-col w-full mx-4
               bg-white/10 backdrop-blur-md border border-white/25
               text-[#DADADA] shadow-md z-10 rounded-[6px]
-              ${isMobile ? 'max-w-[574px]' : modalType === 'tokenomics' ? 'max-w-[80%]' : 'max-w-[574px]'}
+              ${
+                isMobile
+                  ? "max-w-[574px]"
+                  : modalType === "tokenomics"
+                  ? "max-w-[80%]"
+                  : "max-w-[574px]"
+              }
               max-h-[55vh] 
               md:max-h-[80vh]
               overflow-y-auto
@@ -227,7 +261,12 @@ export default function Navbar() {
               onClick={closeModal}
               aria-label="Close modal"
             >
-              <Image src="/images/close-modal.svg" height={20} width={20} alt="X" />
+              <Image
+                src="/images/close-modal.svg"
+                height={20}
+                width={20}
+                alt="X"
+              />
             </div>
 
             {/* About Modal */}
@@ -242,8 +281,9 @@ export default function Navbar() {
                   <p className="text-[18px]">
                     Solana Casino: The memecoin that pays you SOL every 21
                     minutes—hold more, win more. Get a chance to win the jackpot
-                    every time the pool accumulates 7 SOL. No luck, just patience.
-                    Welcome to the only casino where the house always pays you.
+                    every time the pool accumulates 7 SOL. No luck, just
+                    patience. Welcome to the only casino where the house always
+                    pays you.
                   </p>
                 </div>
               </div>
@@ -251,61 +291,65 @@ export default function Navbar() {
 
             {/* Tokenomics Modal */}
             {modalType === "tokenomics" && (
-  <div className="flex flex-col gap-4">
-    <div className="py-[12px] px-[30px] bg-[rgba(0,0,0,0.12)]">
-      <h2 className="text-[26px] text-white font-semibold">
-        Tokenomics
-      </h2>
-    </div>
-    <div className="space-y-8 px-[30px] py-[20px]">
-      {/* First row of 3 columns */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-        <div className="">
-          <div className="font-semibold mb-2">Total Supply</div>
-          <div>1,000,000,000</div>
-        </div>
-        <div className="">
-          <div className="font-semibold mb-2">Buy/Sell Tax</div>
-          <div>7.77%</div>
-        </div>
-        <div className="">
-          <div className="font-semibold mb-2">
-            Holder Reward Distribution (5%)
-          </div>
-          <div>SOL distributed automatically every 21 minutes *LPs
-          excluded</div>
-        </div>
-      </div>
-      {/* Second row of 3 columns */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-        <div className="">
-          <div className="font-semibold mb-2">Jackpot Pool (2.77%)</div>
-          <div>
-            Every time the pool accumulates 7 SOL, one lucky winner
-            wins it all (higher holdings = higher win %) *LPs
-            excluded
-          </div>
-        </div>
-        <div className="">
-          <div className="font-semibold mb-2">Fair Launch</div>
-          <div>
-            No pre-sale or externally allocated tokens. 100%
-            community driven
-          </div>
-        </div>
-        <div className="">
-          <div className="font-semibold mb-2">
-            Developer Holdings (Never Sold)
-          </div>
-          <div>
-            5% – Allocated for marketing, project development, and
-            ecosystem growth
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+              <div className="flex flex-col gap-4">
+                <div className="py-[12px] px-[30px] bg-[rgba(0,0,0,0.12)]">
+                  <h2 className="text-[26px] text-white font-semibold">
+                    Tokenomics
+                  </h2>
+                </div>
+                <div className="space-y-8 px-[30px] py-[20px]">
+                  {/* First row of 3 columns */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+                    <div className="">
+                      <div className="font-semibold mb-2">Total Supply</div>
+                      <div>1,000,000,000</div>
+                    </div>
+                    <div className="">
+                      <div className="font-semibold mb-2">Buy/Sell Tax</div>
+                      <div>7.77%</div>
+                    </div>
+                    <div className="">
+                      <div className="font-semibold mb-2">
+                        Holder Reward Distribution (5%)
+                      </div>
+                      <div>
+                        SOL distributed automatically every 21 minutes *LPs
+                        excluded
+                      </div>
+                    </div>
+                  </div>
+                  {/* Second row of 3 columns */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+                    <div className="">
+                      <div className="font-semibold mb-2">
+                        Jackpot Pool (2.77%)
+                      </div>
+                      <div>
+                        Every time the pool accumulates 7 SOL, one lucky winner
+                        wins it all (higher holdings = higher win %) *LPs
+                        excluded
+                      </div>
+                    </div>
+                    <div className="">
+                      <div className="font-semibold mb-2">Fair Launch</div>
+                      <div>
+                        No pre-sale or externally allocated tokens. 100%
+                        community driven
+                      </div>
+                    </div>
+                    <div className="">
+                      <div className="font-semibold mb-2">
+                        Developer Holdings (Never Sold)
+                      </div>
+                      <div>
+                        5% – Allocated for marketing, project development, and
+                        ecosystem growth
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             {/* Contract Modal */}
             {modalType === "contract" && (
               <div className="flex flex-col gap-4">

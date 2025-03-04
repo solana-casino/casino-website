@@ -12,6 +12,8 @@ export default function Home() {
 
   // Choose video based on screen size
   const videoSrc = isMobile ? "/videos/mobile.mp4" : "/videos/desktop.mp4";
+  const poster = isMobile ? "/images/mobile-poster.jpg" : "/images/desktop-poster.jpg";
+
 
   return (
     <div className="relative w-full h-dvh text-white px-6 md:px-14 overflow-hidden ">
@@ -23,6 +25,8 @@ export default function Home() {
         loop
         muted={isMuted}
         playsInline
+        preload="metadata"
+        poster={poster}
       />
       {/* Navbar */}
       <Navbar />
