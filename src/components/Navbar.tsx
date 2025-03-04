@@ -536,7 +536,7 @@ export default function Navbar() {
                   <p className="text-[18px]">
                     Solana Casino: The memecoin that pays you SOL every 21
                     minutes—hold more, win more. Get a chance to win the jackpot
-                    each time the pool hits 7 SOL. No luck, just patience.
+                    each time the pool accumulates 7 SOL. No luck, just patience.
                     Welcome to the only casino where the house always pays you.
                   </p>
                 </div>
