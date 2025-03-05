@@ -32,7 +32,7 @@ export default function Navbar() {
   };
 
   // Example contract address
-  const CONTRACT_ADDRESS = "SQtSMvYfXome11YgxFMD75hNbGQXW5QTin";
+  const CONTRACT_ADDRESS = "BzK8crS8gakd59f3ChAzuTdzdM8CNSwjgqFS54rSponz";
   // Show first 4 and last 4 characters
   const displayAddress = `${CONTRACT_ADDRESS.slice(
     0,
