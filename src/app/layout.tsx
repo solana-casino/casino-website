@@ -19,6 +19,11 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
+  },
   title: "Solana Casino",
   description: "",
 };
