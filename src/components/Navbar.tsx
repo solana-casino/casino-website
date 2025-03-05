@@ -105,7 +105,18 @@ export default function Navbar() {
               alt="Telegram"
             />
           </Link>
-          <Image src="/images/icon.svg" height={30} width={30} alt="Icon" />
+          <Link
+            href="https://dexscreener.com/solana/FGUMoLUUJNBuBwp5bRrLMpTa1BzbmEJLTE8eiqFkEeH6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/icon.svg"
+              height={30}
+              width={30}
+              alt="Dexscreener"
+            />
+          </Link>
         </div>
         <div className="md:hidden" onClick={() => setModalOpen(true)}>
           <Image
@@ -190,12 +201,18 @@ export default function Navbar() {
                     alt="Telegram"
                   />
                 </Link>
-                <Image
-                  src="/images/icon.svg"
-                  height={30}
-                  width={30}
-                  alt="Icon"
-                />
+                <Link
+                  href="https://dexscreener.com/solana/FGUMoLUUJNBuBwp5bRrLMpTa1BzbmEJLTE8eiqFkEeH6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/icon.svg"
+                    height={30}
+                    width={30}
+                    alt="Dexscreener"
+                  />
+                </Link>
               </div>
 
               <div>

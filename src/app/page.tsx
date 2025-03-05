@@ -130,12 +130,12 @@ export default function Home() {
       </button>
 
       {/* Purchase $CASINO Button */}
-      <button
+      <a
+        href="https://jup.ag/swap/SOL-BzK8crS8gakd59f3ChAzuTdzdM8CNSwjgqFS54rSponz"
+        target="_blank"
+        rel="noopener noreferrer"
         className="
-          px-[40px] py-[10px] 
-          fixed left-1/2
-          -translate-x-1/2
-          transform
+          px-[40px] py-[10px] fixed bottom-8 left-1/2 -translate-x-1/2 transform
           z-50
           w-[231px] h-[43px]
           flex items-center justify-center
@@ -153,14 +153,9 @@ export default function Home() {
           hover:bg-black/[0.4]
           hover:shadow-md
         "
-        // Inline style to handle safe area on iOS
-        style={{
-          // 2rem from bottom plus iOS safe-area
-          bottom: `calc(2rem + env(safe-area-inset-bottom))`,
-        }}
       >
         Purchase $CASINO
-      </button>
+      </a>
     </div>
   );
 }
