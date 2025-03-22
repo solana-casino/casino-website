@@ -330,7 +330,7 @@ export default function Navbar() {
                         Holder Reward Distribution (5%)
                       </div>
                       <div>
-                        SOL distributed automatically every 21 minutes *LPs
+                        SOL distributed automatically to all holders every 21 minutes *LPs
                         excluded
                       </div>
                     </div>
@@ -343,7 +343,7 @@ export default function Navbar() {
                       </div>
                       <div>
                         Every time the pool accumulates 7 SOL, one lucky winner
-                        wins it all (higher holdings = higher win %) *LPs
+                        wins it all (higher holdings = higher win probability) *LPs
                         excluded
                       </div>
                     </div>
@@ -359,7 +359,7 @@ export default function Navbar() {
                         Developer Holdings (Never Sold)
                       </div>
                       <div>
-                        5% – Allocated for marketing, project development, and
+                        5% – Rewards allocated for marketing, project development, and
                         ecosystem growth
                       </div>
                     </div>
