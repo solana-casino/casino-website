@@ -89,8 +89,8 @@ export default function Home() {
   // Choose video based on screen size
   const videoSrc = isMobile ? "/videos/vertical_video.webm" : "/videos/horizontal_video.webm";
   const poster = isMobile
-    ? "/images/mobile-poster-2.png"
-    : "/images/desktop-poster-2.png";
+    ? "/images/mobile-poster-2.jpg"
+    : "/images/desktop-poster-2.jpg";
 
   return (
     <div className="relative w-full h-dvh text-white px-6 md:px-14 overflow-hidden">
