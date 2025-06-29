@@ -60,7 +60,7 @@ export default function Navbar() {
       {/* NAVBAR */}
       <nav className="flex justify-between items-center py-4">
         {/* Logo */}
-        <div className="">
+        <div className="w-[204px] border ">
           <Image src="/images/logo.png" height={100} width={100} alt="Logo" />
         </div>
         {/* Nav Items */}
@@ -85,7 +85,7 @@ export default function Navbar() {
           </p>
         </div>
         {/* Social Icons */}
-        <div className="hidden md:flex justify-center items-center gap-6 ">
+        <div className="hidden md:flex justify-center items-center gap-8 ">
           <Link
             href="https://x.com/CasinoCoinSol"
             target="_blank"
