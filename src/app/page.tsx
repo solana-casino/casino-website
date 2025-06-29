@@ -87,7 +87,7 @@ export default function Home() {
   const isMobile = useIsMobile(768);
 
   // Choose video based on screen size
-  const videoSrc = isMobile ? "/videos/vertical_video.webm" : "/videos/horizontal_video.webm";
+  const videoSrc = isMobile ? "/videos/mobile_video.mp4" : "/videos/horizontal_video.webm";
   const poster = isMobile
     ? "/images/mobile-poster-2.jpg"
     : "/images/desktop-poster-2.jpg";
