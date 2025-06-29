@@ -60,11 +60,11 @@ export default function Navbar() {
       {/* NAVBAR */}
       <nav className="flex justify-between items-center py-4">
         {/* Logo */}
-        <div>
-          <Image src="/images/logo.svg" height={100} width={100} alt="Logo" />
+        <div className="">
+          <Image src="/images/logo.png" height={100} width={100} alt="Logo" />
         </div>
         {/* Nav Items */}
-        <div className="hidden md:flex justify-center items-center gap-10 opacity-100 rounded-[50px] bg-black/10 border border-[#6F6F6F] backdrop-blur-md px-[40px] py-[10px] text-[#DADADA] text-[18px]">
+        <div className="hidden md:flex justify-center items-center gap-10 opacity-100 rounded-[50px] bg-black/10 border border-[#6F6F6F] backdrop-blur-md px-[40px] py-[10px] text-[#DADADA] text-[18px]  ">
           <p
             className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-white"
             onClick={() => setModalType("about")}
@@ -85,7 +85,7 @@ export default function Navbar() {
           </p>
         </div>
         {/* Social Icons */}
-        <div className="hidden md:flex justify-center items-center gap-10">
+        <div className="hidden md:flex justify-center items-center gap-6 ">
           <Link
             href="https://x.com/CasinoCoinSol"
             target="_blank"
@@ -227,6 +227,19 @@ export default function Navbar() {
                     alt="Dexscreener"
                   />
                 </Link>
+
+                 <Link
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/ponz.png"
+              height={18}
+              width={18}
+              alt="Ponz"
+            />
+          </Link>
               </div>
 
               <div>
