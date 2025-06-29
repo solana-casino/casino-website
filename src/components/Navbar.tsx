@@ -105,6 +105,7 @@ export default function Navbar() {
               alt="Telegram"
             />
           </Link>
+         
           <Link
             href="https://dexscreener.com/solana/FGUMoLUUJNBuBwp5bRrLMpTa1BzbmEJLTE8eiqFkEeH6"
             target="_blank"
@@ -115,6 +116,19 @@ export default function Navbar() {
               height={30}
               width={30}
               alt="Dexscreener"
+            />
+          </Link>
+
+           <Link
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/ponz.png"
+              height={18}
+              width={18}
+              alt="Ponz"
             />
           </Link>
         </div>
@@ -296,7 +310,7 @@ export default function Navbar() {
                 </div>
                 <div className="px-[30px] py-[20px]">
                   <p className="text-[18px]">
-                    Solana Casino: The memecoin that pays you SOL every 21
+                    Solana Casino: The memecoin that pays you SOL every 5
                     minutes—hold more, win more. Get a chance to win the jackpot
                     every time the pool accumulates 7 SOL. No luck, just
                     patience. Welcome to the only casino where the house always
@@ -323,15 +337,15 @@ export default function Navbar() {
                     </div>
                     <div className="">
                       <div className="font-semibold mb-2">Buy/Sell Tax</div>
-                      <div>7.77%</div>
+                      <div>7.77% (5% Rewards | 2.77% Jackpot)</div>
                     </div>
                     <div className="">
                       <div className="font-semibold mb-2">
-                        Holder Reward Distribution (5%)
+                        Automatic SOL Rewards (5%)
                       </div>
                       <div>
-                        SOL distributed automatically to all holders every 21 minutes *LPs
-                        excluded
+                        Sent proportionately to all holders every 5 minutes *LPs excluded
+
                       </div>
                     </div>
                   </div>
@@ -339,12 +353,10 @@ export default function Navbar() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
                     <div className="">
                       <div className="font-semibold mb-2">
-                        Jackpot Pool (2.77%)
+                        Jackpot (2.77%)
                       </div>
                       <div>
-                        Every time the pool accumulates 7 SOL, one lucky winner
-                        wins it all (higher holdings = higher win probability) *LPs
-                        excluded
+                        Every time the jackpot accumulates 7 SOL, one lucky winner wins it all (hold more = higher odds) *LPs excluded
                       </div>
                     </div>
                     <div className="">
@@ -356,11 +368,10 @@ export default function Navbar() {
                     </div>
                     <div className="">
                       <div className="font-semibold mb-2">
-                        Developer Holdings (Never Sold)
+                        Developer Holdings (Locked Forever)
                       </div>
                       <div>
-                        5% – Rewards allocated for marketing, project development, and
-                        ecosystem growth
+                        5% – Rewards reserved for marketing, development, and ecosystem growth
                       </div>
                     </div>
                   </div>
