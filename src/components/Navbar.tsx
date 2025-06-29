@@ -60,7 +60,7 @@ export default function Navbar() {
       {/* NAVBAR */}
       <nav className="flex justify-between items-center py-4">
         {/* Logo */}
-        <div className="w-[204px] border ">
+        <div className="w-[204px] ">
           <Image src="/images/logo.png" height={100} width={100} alt="Logo" />
         </div>
         {/* Nav Items */}
